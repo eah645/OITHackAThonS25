@@ -13,7 +13,7 @@ if (window.localStorage.length == 0) {
     welcome.innerText = "Welcome!"
 
     let welcomeDesc = document.createElement('h2');
-    welcomeDesc.innerText = "Welcome to [website name]! Before you get started, we'd like to get a little bit of information about you to personalize your experience!"
+    welcomeDesc.innerText = "Before you get started, we'd like to get a little bit of information about you to personalize your experience!"
 
     introText.appendChild(welcome);
     introText.appendChild(welcomeDesc);
@@ -125,6 +125,7 @@ if (window.localStorage.length == 0) {
         localStorage.setItem('Theme', JSON.stringify(enteredIdentity));
 
         introPage.remove();
+        document.querySelector(".homepage").style.setProperty('display', 'block');
     })
 }
 
@@ -186,6 +187,16 @@ function setTheme(theme_selection) {
             document.querySelectorAll(".journalSave").forEach(function (journalSave) {
                 journalSave.style.setProperty('background-color', '#A3A3A3', 'important');
             })
+        }
+
+        if (document.querySelector(".prevPage") !== null) {
+            document.querySelector(".prevPage").style.setProperty('background-color', "#ffffff");
+            document.querySelector(".prevPage").style.setProperty('color', "#000000");
+        }
+
+        if (document.querySelector(".nextPage") !== null) {
+            document.querySelector(".nextPage").style.setProperty('background-color', "#ffffff");
+            document.querySelector(".nextPage").style.setProperty('color', "#000000");
         }
 
         //Toggle settings
@@ -256,6 +267,16 @@ function setTheme(theme_selection) {
             document.querySelectorAll(".journalSave").forEach(function (journalSave) {
                 journalSave.style.setProperty('background-color', '#A3A3A3', 'important');
             })
+        }
+
+        if (document.querySelector(".prevPage") !== null) {
+            document.querySelector(".prevPage").style.setProperty('background-color', "#ffffff");
+            document.querySelector(".prevPage").style.setProperty('color', "#000000");
+        }
+
+        if (document.querySelector(".nextPage") !== null) {
+            document.querySelector(".nextPage").style.setProperty('background-color', "#ffffff");
+            document.querySelector(".nextPage").style.setProperty('color', "#000000");
         }
 
         //Toggle settings
@@ -908,6 +929,16 @@ function addNewEntry() {
     }
 
     //Else if... currentPage % 2 === 0? Even number... I think.
+    console.log(currentPage);
+    console.log("Mod " + Entries.length % 2);
+
+    //Ok so- I have- if the mod === 1, the new entry should go on the right side. Right now it defaults to the left
+    //CurrentPage- I'm like 90% sure it's Entries.Length / 2.floor (round down). Should then load in the previous entry and start the next
+    //Actually- is this just assigning current-
+        //Honestly- I have like nothing else I can do for the HackAThon I'm so tired
+    // if (Entries.length % 2 === 1) {
+
+    // }
 
     //Here's the next thing to fix... so if both pages are filled, then clear both of them + increase page count
     //And I've... only made it possible to add to the left page... so yeah let's work with that first
@@ -1064,57 +1095,6 @@ function saveEntry() {
         let currentTitles = document.querySelectorAll('.title');
         let currentEntries = document.querySelectorAll('.entry');
         let currentDates = document.querySelectorAll('.date');
-
-    //     //If there's two entries currently on the page
-    //     if (currentTitles.length === 2) {
-    //         console.log('not here')
-    //         //Check these against the titles already existing in local storage
-    //         Entries.forEach(function (entry) {
-    //             //Wait ok- so it's comparing the first thing in local storage to the first thing in the code which- is that.
-    //             //Is there a way I can- do I rewrite it with this.?
-    //             if (entry.content !== currentEntries[0].value) {
-    //                 entry.content = currentEntries[0].value;
-    //                 localStorage.setItem('Entries', JSON.stringify(Entries));
-    //                 return;
-    //             } else if (entry.content !== currentEntries[1].value) {
-    //                 entry.content = currentEntries[1].value;
-    //                 localStorage.setItem('Entries', JSON.stringify(Entries));
-    //                 return;
-    //             }
-    //         })
-    //         let newEntry = {
-    //             title: document.querySelector('.title').value,
-    //             content: document.querySelector('.entry').value,
-    //             date: document.querySelector('.date').innerText,
-    //         };
-        
-    //         Entries.push(newEntry);
-        
-    //         localStorage.setItem('Entries', JSON.stringify(Entries));
-    //     } else if (currentTitles.length === 1) {
-    //         console.log("youre here right")
-    //         //Check against existing titles. If no match, then add to localStorage
-    //         Entries.forEach(function (entry) {
-    //             if (entry.content !== currentEntries[0].value) {
-    //                 entry.content = currentEntries[0].value;
-    //                 localStorage.setItem('Entries', JSON.stringify(Entries));
-    //                 return;
-    //             }
-    //         })
-    //         let newEntry = {
-    //             title: document.querySelector('.title').value,
-    //             content: document.querySelector('.entry').value,
-    //             date: document.querySelector('.date').innerText,
-    //         };
-        
-        
-    //         Entries.push(newEntry);
-        
-    //         localStorage.setItem('Entries', JSON.stringify(Entries));
-    //         return;
-    //     }
-
-    // }
 
     console.log('down here')
 
@@ -1430,6 +1410,8 @@ function prevPage() {
         newPage.appendChild(inputBox);
         newPage.appendChild(EntryInput);
         newPage.appendChild(saveJournalBtn);
+
+        setTheme(theme);
     
     
         //Doing it again for the journal_Open2 (assuming that there's another option)
@@ -1491,7 +1473,7 @@ let setting = document.querySelector("#setting");
 let settings = document.querySelector(".settingToggle");
 
 setting.addEventListener('click', () => {
-    console.log("Fuck you")
+    // console.log("Fuck you")
 if (settings.style.display === 'none' || settings.style.display === '') {
     settings.style.display = 'block';
 } else {
@@ -1503,7 +1485,6 @@ if (settings.style.display === 'none' || settings.style.display === '') {
 document.getElementById("theme2").addEventListener("change", function() {
     theme = this.value;
     setTheme(theme);
-    console.log("Are you even-")
 });
 
 function saveChanges() {
@@ -1516,4 +1497,6 @@ function saveChanges() {
     }
 
     localStorage.setItem('Theme', JSON.stringify(theme));
+
+    alert('Your preferred settings have been saved.');
 }

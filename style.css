@@ -60,6 +60,11 @@ form {
     margin: 5px;
 }
 
+/* .glyphicon-cog:hover {
+    transform: rotate(90deg);
+    transform-origin: center;
+} */
+
 .NameIntro {
     margin-top: 35%;
     font-size: 20px;
@@ -67,6 +72,7 @@ form {
 
 .homepage {
     position: relative;
+    /* display: none; */
 }
 
 .Intro > h1{
@@ -93,21 +99,23 @@ hr {
     padding-bottom: 10px;
 }
 
-/* .features {
-    width: 100%;
+.features {
+    width: 100vw !important;
+    height: auto;
     display: block;
     text-align: center;
-} */
+    /* background-color: red; */
+}
 
 /*It'd be so cool if I could make this look exactly like the cover of the actual journal*/
 .journal {
-    /* display: inline-block; */
-    min-width: 42%;
+    display: inline-block;
+    min-width: 500px;
     max-width: 100%;
     height: 100vh;
     /* background-color: blue; */
     /* border: 4px dashed black; */
-    margin: 20px;
+    margin: 10px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -153,7 +161,7 @@ hr {
 
 .backToHome {
     margin: 20px;
-    width: 80%;
+    width: 95%;
     font-size: 3vh;
 }
 
