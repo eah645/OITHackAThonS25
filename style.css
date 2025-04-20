@@ -212,6 +212,7 @@ hr {
     background-repeat: no-repeat;
     background-size: cover;
     height: 85%;
+    min-width: 350px;
     width: 40%;
 }
 
@@ -221,6 +222,7 @@ hr {
     left: 10%;
     background-color: rgba(0, 0, 0, 0.4);
     height: 85%;
+    min-width: 350px;
     width: 40%;
     max-width: 45%;
     border-right: 4px solid #000;
@@ -239,6 +241,7 @@ hr {
     right: 10%;
     background-color: rgba(0, 0, 0, 0.4);
     height: 85%;
+    min-width: 350px;
     width: 40%;
     max-width: 45%;
     overflow-y: scroll;

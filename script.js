@@ -126,6 +126,8 @@ if (window.localStorage.length == 0) {
 
         introPage.remove();
         document.querySelector(".homepage").style.setProperty('display', 'block');
+
+        setTheme(theme);
     })
 }
 
@@ -937,7 +939,8 @@ function addNewEntry() {
     //Actually- is this just assigning current-
         //Honestly- I have like nothing else I can do for the HackAThon I'm so tired
     // if (Entries.length % 2 === 1) {
-
+    //     currentPage = Math.floor((Entries.length + 1) / 2);
+    //     console.log("Floor" + currentPage);
     // }
 
     //Here's the next thing to fix... so if both pages are filled, then clear both of them + increase page count
