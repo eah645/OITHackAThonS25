@@ -1,0 +1,315 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    color: #000;
+}
+
+body {
+    background-color: #B8B5DB;
+    position: relative;
+    height: 100%;
+}
+
+.introText {
+    padding-top: 20%;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/*Should change font family to something more... friendly?*/
+/* .introText > h1 { */
+/* } */
+
+/*May want to increase font size?*/
+form {
+    text-align: center;
+}
+
+#userName {
+    margin-bottom: 20px;
+}
+
+/*Aaaaaa-*/
+#wrapper {
+    display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.submit {
+    justify-content: center;
+}
+
+
+
+
+/*Actual homepage*/
+.nav {
+    height: 50px;
+    background-color: rgb(36, 24, 114);
+    position: absolute;
+    top: -302px;
+    /* left: -20px; */
+    width: 1000vw;
+}
+
+.glyphicon-cog {
+    font-size: 40px;
+    margin: 5px;
+}
+
+.NameIntro {
+    margin-top: 35%;
+    font-size: 20px;
+}
+
+.homepage {
+    position: relative;
+}
+
+.Intro > h1{
+    color: #fff;
+    text-align: center;
+}
+
+/*Need to position: absolute this somehow*/
+hr {
+    max-width: 60%;
+    height: 30px;
+    background-image: linear-gradient(to right, white , transparent);
+    border: 0;
+}
+
+.affirmation {
+    margin-top: 1vh;
+    background-color: rgb(43, 99, 99);
+}
+
+.affirmation > h2 {
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* .features {
+    width: 100%;
+    display: block;
+    text-align: center;
+} */
+
+/*It'd be so cool if I could make this look exactly like the cover of the actual journal*/
+.journal {
+    /* display: inline-block; */
+    min-width: 42%;
+    max-width: 100%;
+    height: 100vh;
+    /* background-color: blue; */
+    /* border: 4px dashed black; */
+    margin: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-size: cover;
+}
+
+.album {
+    display: inline-block;
+    width: 42%;
+    height: 70vh;
+    background-color: rgb(228, 203, 203);
+    border: 4px dashed black;
+    vertical-align: top;
+    margin: 20px;
+}
+
+.glyphicon-camera {
+    font-size: 45px;
+    vertical-align: middle;
+}
+
+
+
+/*Journal page*/
+
+.nav_j {
+    height: 50px;
+    background-color: rgb(36, 24, 114);
+    position: absolute;
+    top: 0;
+    /* left: -20px; */
+    width: 100vw;
+}
+
+.settingToggle {
+    height: 100vh;
+    width: 40%;
+    background-color: #837F7F;
+    z-index: 100;
+    position: relative;
+    display: none;
+}
+
+.backToHome {
+    margin: 20px;
+    width: 80%;
+    font-size: 3vh;
+}
+
+.changeTheme {
+    margin: 10px;
+}
+
+.changeTheme > h2 {
+    font-size: 3.5vh;
+}
+
+.changeTheme > select {
+    width: 60%;
+    font-size: 2.5vh;
+}
+
+.changeName {
+    margin: 10px;
+}
+
+.changeName > h2 {
+    font-size: 3.5vh;
+}
+
+.changeName > input {
+    width: 60%;
+    font-size: 2.5vh;
+}
+
+.saveChanges {
+    position: absolute;
+    right: 20px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+/* .container_j {
+    max-width: 75%;
+    width: auto;
+    height: auto;
+} */
+
+.journal_Cover {
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 85%;
+    width: 40%;
+}
+
+.journal_Open {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 85%;
+    width: 40%;
+    max-width: 45%;
+    border-right: 4px solid #000;
+    z-index: 1;
+    overflow-y: scroll;
+    display: none; /*Remove this when opening notebook*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-blend-mode: multiply; */
+}
+
+.journal_Open2 {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 85%;
+    width: 40%;
+    max-width: 45%;
+    overflow-y: scroll;
+    display: none; /*Remove this when opening notebook*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-blend-mode: multiply; */
+}
+
+.date {
+    position: relative;
+    text-align: right;
+    padding: 15px;
+}
+
+/*I can't center align this fucking box- I need this stupid extra div ok great-*/
+.input_box {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 20px;
+    opacity: 90%;
+    background-color: rgb(51, 51, 156);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.entry {
+    margin: 10px;
+    width: 95%;
+    height: 75%;
+    background-color: rgb(89, 89, 125);
+    border: none;
+    resize: none;
+}
+
+.journalSave {
+    position: absolute;
+    right: 5px;
+    bottom: 15px;
+    text-align: right;
+}
+
+/*Maybe turn this into an animation? Like when you hover over + icon the "Add new entry" shows up?*/
+.btn-addNew {
+    padding: 10px;
+    position: absolute;
+    top: 8%;
+    right: 0%;
+    background-color: #fff;
+}
+
+.btn-addNew > p {
+    display: none;
+    font-size: 15px;
+}
+
+/*Eh- very basic transition because it's not super important just need a slight break (so far 9 hours straight coding)*/
+.btn-addNew:hover > p {
+    display: block;
+}
+
+.glyphicon-plus-sign {
+    font-size: 45px;
+}
+
+.prevPage {
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    font-size: 15px;
+    z-index: 2;
+}
+
+.nextPage {
+    position: absolute !important;
+    bottom: 3%;
+    right: 5%;
+    font-size: 15px;
+}

@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>My Journal</title>
+</head>
+<body>
+    <div class="nav_j">
+        <!--Would like to make this load through JS, running low on time tho-->
+        <a href="#" id="setting">
+            <span class="glyphicon glyphicon-cog"></span>
+          </a>
+          <div class="settingToggle">
+            <button type="button" class="btn btn-default btn-sm backToHome">
+                <span class="glyphicon glyphicon-home"></span> Home
+              </button>
+              <div class="changeTheme">
+                <h2>Change Theme?</h2>
+                <select name="identityDropdown" id="theme2">
+                    <option value="Asexual" id="AsexualOption">Asexual</option>
+                    <option value="Aromantic" id="AromanticOption">Aromantic</option>
+                    <option value="AroAce" id="AroAceOption">AroAce</option>
+                    <option value="Nonbinary" id="EnbyOption">Nonbinary</option>
+                    <option value="Transgender" id="TransOption">Transgender</option>
+                    <option value="Gay" id="GayOption">Gay</option>
+                    <option value="Lesbian" id="LesbianOption">Lesbian</option>
+                    <option value="Bisexual" id="BisexualOption">Bisexual</option>
+                    <option value="Agender" id="AgenderOption">Agender</option>
+                </select>
+              </div>
+
+              <div class="changeName">
+                <h2>Change Name?</h2>
+                <input type="text" id="newName">
+              </div>
+
+              <button class="SaveChanges" onclick="saveChanges()">Save Changes</button>
+          </div>
+    </div>
+    <!--This is probably important to create... lol-->
+    <div class="journal_Cover"></div>
+
+    <!--Open journal-->
+    <div class="journal_Open"></div>
+    <div class="journal_Open2"></div>
+
+
+    <button type="button" class="btn-addNew" onclick="addNewEntry()">
+        <span class="glyphicon glyphicon-plus-sign"></span>
+        <p>Add new entry</p>
+    </button>
+
+    <!--Next / previous page btns-->
+    <!--And this is about to be so much js- oh boy. Fun challenge at least-->
+    <button type="button" class="btn btn-default btn-sm prevPage" onclick="prevPage()">
+        <span class="glyphicon glyphicon-chevron-left"></span> Previous
+    </button>
+    <button type="button" class="btn btn-default btn-sm nextPage" onclick="nextPage()">
+        Next <span class="glyphicon glyphicon-chevron-right"></span>
+    </button>
+
+    <!--Here comes the not so fun part... do I have to create a separate layout if it's a smaller screen?
+    For that there'd only be one page per thing so... ok then. Yay- creating separately so if it
+    fails- or i could upload to github that also works-->
+    <!--Ok here we go- -->
+    <!-- <div class="container_j">
+        <div class="journal_Cover"></div>
+    </div> -->
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
